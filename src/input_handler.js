@@ -9,7 +9,7 @@ export default class InputHandler {
             switch(event.keyCode) {
                 case this.left:
                     game.movePieceLeft();
-                    
+    
                     break;
                 case this.right:
                     game.movePieceRight();

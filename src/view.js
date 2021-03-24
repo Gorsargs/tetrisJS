@@ -2,7 +2,8 @@
 export {View, ContextView}
 
 class View{
-    constructor(width,height,rows,columns,id){
+    constructor(width,height,rows,columns,id,game){
+        this.game = game;
         this.width = width;
         this.height = height;
         this.canvas = document.getElementById(id);
@@ -135,17 +136,17 @@ class ContextView extends View {
         this.RandomPieceMenu(200,200,200);
         this.TextDrawing('Next Piece',210,200,40);
        
-        this.TextDrawing(`Record = ${game.record}`,210,470,24);
+        this.TextDrawing(`Record = ${this.game.record}`,210,470,24);
 
-        this.TextDrawing(`Level = ${game.level}`,210,500,20);
+        this.TextDrawing(`Level = ${this.game.level}`,210,500,20);
     
     
 
-        this.TextDrawing(`Score = ${game.score}`,210,530,20);
-        this.TextDrawing(`Lines deleted = ${game.lines}`,210,560,20);
+        this.TextDrawing(`Score = ${this.game.score}`,210,530,20);
+        this.TextDrawing(`Lines deleted = ${this.game.lines}`,210,560,20);
         this.TextDrawing(`Press "R" to restart`,210,640,20);
 
-        this.randomPieceField(game.activePiece.nextpiece,game.activePiece.color);
+        this.randomPieceField(this.game.activePiece.nextpiece,this.game.activePiece.color);
         this.drawLine();
     }
 

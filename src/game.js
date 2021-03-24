@@ -312,7 +312,7 @@ export default class Game {
                     this.movePieceDown();
                 },speed)
                 this.intervalCount = 1;
-                console.log('nigar ?')
+
             };
         
 
@@ -376,6 +376,8 @@ export default class Game {
         this.activePiece.x = this.getRandomInt(6)
         this.activePiece.y = 0;
         this.activePiece.blocks = this.getRandomPiece();
+        this.activePiece.nextpiece = this.getRandomPiece();
+        this.activePiece.color = this.getRandomColor();
         this.level = 0;
         this.lines = 0;
         this.score = 0;
